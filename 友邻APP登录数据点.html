@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+	<body style="height: 100%; margin: 0">
+		<div id="container" style="height: 100%"></div>
+		<script type="text/javascript" src="echarts/echarts.min.js"></script>
+		<script type="text/javascript" src="HGYGeoJson.js"></script>
+		<script type="text/javascript">
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+			var weiboData = [
+			[[106.6718736953492,26.56853003188755]], 
+			[[106.6728736953593,26.56853003188755]], 
+			[[106.6738736953694,26.56853003188755]], 
+			];
+			
+			function random(r){
+				return [106.6718736953492 + Math.random() / r, 26.56853003188755 + Math.random() / r]
+			}
+			
+			for (var i = 0; i < 10000; i++){
+				
+				var r = Math.random() * 10;
+				if (r > 5) r = -r;
+			
+				weiboData[0].push(random(r));
+				weiboData[1].push(random(r));
+				weiboData[2].push(random(r));
+			}
+			
+			option = {
+				backgroundColor: '#404a59',
+				title: {
+					text: '友邻APP登录数据点',
+					subtext: '友邻APP登录数据',
+					sublink: 'http://www.youlin.com',
+					left: 'center',
+					top: 'top',
+					textStyle: {
+						color: '#fff'
+					}
+				},
+				legend: {
+					left: 'left',
+					data: ['强', '中', '弱'],
+					textStyle: {
+						color: '#ccc'
+					}
+				},
+				geo: {
+					name: '强',
+					type: 'scatter',
+					map: 'HGY',
+					label: {
+						emphasis: {
+							show: false
+						}
+					},
+					itemStyle: {
+						normal: {
+							areaColor: '#323c48',
+							borderColor: '#111'
+						},
+						emphasis: {
+							areaColor: '#2a333d'
+						}
+					}
+				},
+				series: [{
+					name: '弱',
+					type: 'scatter',
+					coordinateSystem: 'geo',
+					symbolSize: 1,
+					large: true,
+					itemStyle: {
+						normal: {
+							shadowBlur: 2,
+							shadowColor: 'rgba(37, 140, 249, 0.8)',
+							color: 'rgba(37, 140, 249, 0.8)'
+						}
+					},
+					data: weiboData[0]
+				}, {
+					name: '中',
+					type: 'scatter',
+					coordinateSystem: 'geo',
+					symbolSize: 1,
+					large: true,
+					itemStyle: {
+						normal: {
+							shadowBlur: 2,
+							shadowColor: 'rgba(14, 241, 242, 0.8)',
+							color: 'rgba(14, 241, 242, 0.8)'
+						}
+					},
+					data: weiboData[1]
+				}, {
+					name: '强',
+					type: 'scatter',
+					coordinateSystem: 'geo',
+					symbolSize: 1,
+					large: true,
+					itemStyle: {
+						normal: {
+							shadowBlur: 2,
+							shadowColor: 'rgba(255, 255, 255, 0.8)',
+							color: 'rgba(255, 255, 255, 0.8)'
+						}
+					},
+					data: weiboData[2]
+				}]
+			};
+
+			myChart.setOption(option);
+		</script>
+	</body>
+
+</html>

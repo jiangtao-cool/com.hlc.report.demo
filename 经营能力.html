@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+	<body style="height: 100%; margin: 0">
+		<div id="container" style="height: 100%"></div>
+		<script type="text/javascript" src="echarts/echarts.min.js"></script>
+		<script type="text/javascript" src="HGYGeoJson.js"></script>
+		<script type="text/javascript">
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+
+			option = {
+				title: {
+					text: '宏立城物业公司经营能力雷达图'
+				},
+				tooltip: {},
+				legend: {
+					data: ['一公司', '二公司']
+				},
+				radar: {
+					// shape: 'circle',
+					indicator: [{
+						name: '收费率',
+						max: 6500
+					}, {
+						name: '业主满意度',
+						max: 16000
+					}, {
+						name: '考勤',
+						max: 30000
+					}, {
+						name: '投诉处理率',
+						max: 38000
+					}, {
+						name: '收入面积比',
+						max: 52000
+					}, {
+						name: '其他',
+						max: 25000
+					}]
+				},
+				series: [{
+					type: 'radar',
+					data: [{
+						value: [4300, 10000, 28000, 35000, 50000, 19000],
+						name: '一公司'
+					}, {
+						value: [5000, 14000, 28000, 31000, 42000, 21000],
+						name: '二公司'
+					}]
+				}]
+			};
+			myChart.setOption(option);
+		</script>
+	</body>
+
+</html>

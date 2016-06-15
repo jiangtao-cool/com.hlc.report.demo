@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+	<body style="height: 100%; margin: 0">
+		<div id="container" style="height: 100%"></div>
+		<script type="text/javascript" src="echarts/echarts.min.js"></script>
+		<script type="text/javascript" src="HGYGeoJson.js"></script>
+		<script type="text/javascript">
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+
+			option = {
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b}: {c} ({d}%)"
+				},
+				legend: {
+					orient: 'vertical',
+					x: 'left',
+					data: ['已售', '已接房', '已装修', '已入驻','状态1','状态2','状态3','状态4']
+				},
+				series: [ {
+					name: '房产状态',
+					type: 'pie',
+					radius: ['30%', '55%'],
+
+					data: [{
+						value: 335,
+						name: '已售'
+					}, {
+						value: 310,
+						name: '已接房'
+					}, {
+						value: 234,
+						name: '已装修'
+					}, {
+						value: 1035,
+						name: '已入驻', selected:true
+					}, {
+						value: 148,
+						name: '状态1'
+					}, {
+						value: 251,
+						name: '状态2'
+					}, {
+						value: 147,
+						name: '状态3'
+					}, {
+						value: 102,
+						name: '状态4'
+					}]
+				}]
+			};
+
+			myChart.setOption(option)
+		</script>
+	</body>
+
+</html>

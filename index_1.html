@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>数据汇总分析-Data summary analysis </title>
+    <link href="sbadmin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="sbadmin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="sbadmin/dist/css/timeline.css" rel="stylesheet">
+    <link href="sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="sbadmin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="common.css"/>
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">数据汇总分析  -  Data summary analysis </a>
+            </div>
+            <!-- /.navbar-header -->
+
+			<script src="menu.js"></script>
+ 				
+            <!-- /.navbar-static-side -->
+        </nav>
+		
+			<div id="page-wrapper">
+	       		
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 宏利城各项目业态分析 
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	分享
+                                </button>
+                                
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	全屏
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	还原
+                                    </button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="container" style="height: 100%; width: 100%;"></div>
+                            
+                            
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                
+                  
+                
+            </div>
+            
+            
+         
+                
+           
+        <!-- /#page-wrapper -->
+       
+
+    </div>
+    <!-- /#wrapper -->
+
+    
+  
+
+
+
+
+	       		
+	       		
+	       		
+	        </div>
+        <!-- /#page-wrapper -->
+       
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="sbadmin/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="sbadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="sbadmin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="sbadmin/bower_components/raphael/raphael-min.js"></script>
+    <script src="sbadmin/dist/js/sb-admin-2.js"></script>
+    <script src="echarts/echarts.min.js"></script>
+    <script src="common.js" ></script>
+    
+    <script>
+    option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: YE_TAI
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'category',
+        data: ['A区','B区','C区','D区','E区','F区','G区']
+    },
+    yAxis: { type: 'value'
+       
+    },
+    series: [
+        {
+            name: YE_TAI[0],
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [320, 302, 301, 334, 390, 330, 320]
+        },
+        {
+            name: YE_TAI[1],
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name: YE_TAI[2],
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name: YE_TAI[3],
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [150, 212, 201, 154, 190, 330, 410]
+        },
+        {
+            name: YE_TAI[4],
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [820, 832, 901, 934, 1290, 1330, 1320]
+        }
+    ]
+};
+    	var chart = echarts.init(document.getElementById('container'));
+    	chart.setOption(option);
+    	chart.on('dblclick', function(){
+    		location = "报表.html"
+    	})
+    	
+    	
+    </script>
+
+</body>
+
+</html>

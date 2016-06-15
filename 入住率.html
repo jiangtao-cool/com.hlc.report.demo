@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+	<body style="height: 100%; margin: 0">
+		<div id="container" style="height: 100%"></div>
+		<script type="text/javascript" src="echarts/echarts.min.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="HGYGeoJson.js" charset="UTF-8"></script>
+		<script type="text/javascript" charset="UTF-8">
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+
+			option = {
+				title: {
+					text: '宏立城物业入住率',
+					 subtext: '虚拟数据',
+					left: 'center',
+					top: 'top'
+				},
+				tooltip: {
+					trigger: 'item',
+					formatter: '{b}:{c}'
+				},
+				toolbox: {
+					show: true,
+					orient: 'vertical',
+					left: 'right',
+					top: 'center',
+					feature: {
+						dataView: {
+							readOnly: false
+						},
+						restore: {},
+						saveAsImage: {}
+					}
+				},
+				visualMap: {
+					min: 0,
+					max: 100,
+					text: ['100%', '0'],
+					realtime: false,
+					calculable: true,
+					color: ['orangered', 'yellow', 'lightskyblue']
+				},
+				series: [{
+					type: 'map',
+					mapType: 'HGY',
+					itemStyle: {
+						normal: {
+							label: {
+								show: true,formatter:'{b}: {c}%'
+							}
+						},
+						emphasis: {
+							label: {
+								show: true
+							}
+						}
+					},
+
+					data: [
+						{name: 'V区', value: 90},
+						{name: '一期', value: 66},
+						{name: 'E区', value: 55},
+						{name: 'F区', value: 33},
+						{name: 'G区', value: 77},
+						{name: '办公一号楼', value: 77},
+						{name: 'C区', value: 77},
+						{name: 'D区双子塔', value: 76},
+						{name: 'N区（贵阳街）', value: 16	},
+						{name: '人工湿地', value: 0	}
+					]
+				}]
+			};
+
+			myChart.setOption(option);
+			
+			myChart.on('click', function(){
+				location = "入住率-钻取-房产状态.html"
+			})
+
+		</script>
+	</body>
+
+</html>

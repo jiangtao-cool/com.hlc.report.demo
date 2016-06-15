@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>数据汇总分析-Data summary analysis </title>
+    <link href="sbadmin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="sbadmin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="sbadmin/dist/css/timeline.css" rel="stylesheet">
+    <link href="sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="sbadmin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="common.css"/>
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">数据汇总分析  -  Data summary analysis </a>
+            </div>
+            <!-- /.navbar-header -->
+
+			<script src="menu.js"></script>
+ 				
+            <!-- /.navbar-static-side -->
+        </nav>
+		
+			<div id="page-wrapper">
+	       		
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 宏立城某项目业态分析
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	分享
+                                </button>
+                                
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	全屏
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	还原
+                                    </button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="container" style="height: 100%; width: 100%;"></div>
+                            
+                            
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                
+            </div>
+            
+            
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 宏立城某项目房产状态分析
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	分享
+                                </button>
+                                
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	全屏
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	还原
+                                    </button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="container2" style="height: 100%; width: 100%;"></div>
+                            
+                            
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                
+            </div>
+         
+                
+           
+        <!-- /#page-wrapper -->
+       
+
+    </div>
+    <!-- /#wrapper -->
+
+    
+  
+
+
+
+
+	       		
+	       		
+	       		
+	        </div>
+        <!-- /#page-wrapper -->
+       
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="sbadmin/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="sbadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="sbadmin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="sbadmin/bower_components/raphael/raphael-min.js"></script>
+    <script src="sbadmin/dist/js/sb-admin-2.js"></script>
+    <script src="echarts/echarts.min.js"></script>
+    <script src="common.js" ></script>
+    
+    <script>
+    option = {
+    	 title: {
+            text: '宏立城某项目业态分析'
+        },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: HOUSE_STATUS,
+        bottom:'bottom'
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '13%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'category',
+        data: YE_TAI
+    },
+    yAxis: { type: 'value'
+       
+    },
+    series: (function(){
+    		var sb = [];
+    		
+    		for (var i = 0; i < HOUSE_STATUS.length; i++){
+    			var e = HOUSE_STATUS[i];
+    			sb.push(
+    				{
+			            name: e,
+			            type: 'bar',
+			            stack: '总量',
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'insideRight'
+			                }
+			            },
+			            data: (function(){
+			            	var sb2 = [];
+			            	for (var j = 0; j < YE_TAI.length; j++){
+			            		sb2.push(random(100,1000))
+			            	}
+			            	return sb2;
+			            })()
+			        }
+    				
+    			)
+    			
+    		}
+    		return sb;
+    	})()
+};
+
+		var chart = echarts.init(document.getElementById('container'));
+    	chart.setOption(option);
+    	chart.on('dblclick', function(){location="报表.html"})
+    	
+ 
+ 
+ 
+     option2 = {
+    	 title: {
+            text: '宏立城某项目房产状态分析'
+        },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: YE_TAI,
+        bottom:'bottom'
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '13%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'category',
+        data: HOUSE_STATUS
+    },
+    yAxis: { type: 'value'
+       
+    },
+    series: (function(){
+    		var sb = [];
+    		
+    		for (var i = 0; i < YE_TAI.length; i++){
+    			var e = YE_TAI[i];
+    			sb.push(
+    				{
+			            name: e,
+			            type: 'bar',
+			            stack: '总量',
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'insideRight'
+			                }
+			            },
+			            data: (function(){
+			            	var sb2 = [];
+			            	for (var j = 0; j < HOUSE_STATUS.length; j++){
+			            		sb2.push(random(100,1000))
+			            	}
+			            	return sb2;
+			            })()
+			        }
+    				
+    			)
+    			
+    		}
+    		return sb;
+    	})()
+};
+    	var chart2 = echarts.init(document.getElementById('container2'));
+    	chart2.setOption(option2);
+    	chart2.on('dblclick', function(){location="报表.html"})
+    	
+    </script>
+
+</body>
+
+</html>

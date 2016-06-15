@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+	<body style="height: 100%; margin: 0">
+		<div id="container" style="height: 100%"></div>
+		<script type="text/javascript" src="echarts/echarts.min.js"></script>
+		<script type="text/javascript" src="HGYGeoJson.js"></script>
+		<script type="text/javascript">
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+
+			option = {
+				
+				series: [{
+					type: 'map',
+					mapType: 'HGY',
+					
+					
+				}]
+			};
+
+			myChart.setOption(option);
+			
+			myChart.on('click', function(){
+				location = "入住率-钻取-房产状态.html"
+			})
+
+		</script>
+	</body>
+
+</html>

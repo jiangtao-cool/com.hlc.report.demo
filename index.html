@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>数据汇总分析-Data summary analysis </title>
+    <link href="sbadmin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="sbadmin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="sbadmin/dist/css/timeline.css" rel="stylesheet">
+    <link href="sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="sbadmin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">数据汇总分析  -  Data summary analysis </a>
+            </div>
+            <!-- /.navbar-header -->
+
+			<script src="menu.js"></script>
+ 				
+            <!-- /.navbar-static-side -->
+        </nav>
+		
+			<div id="page-wrapper">
+	       		
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 业态 - 面积占比
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	分享
+                                </button>
+                                
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	全屏
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        	还原
+                                    </button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="id_01" data-echart="yetai" data-title="总面积：1200万平方米" style="height:600px;"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                
+                  <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 房产状态 - 户数占比
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="mianji" data-echart="zhuangtai" data-title="总户数：xx万户" style="height:600px;"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                
+            </div>
+            
+            
+             <div class="row">
+                  <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 应收 - 费用类别占比
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="hushu-fee" data-echart="fee_type" data-title="本月应收：xxx万元" style="height:600px;"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                
+                  <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 实收 - 费用类别占比
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="hushu-fee" data-echart="fee_type" data-title="本月实收：xxx万元" style="height:600px;"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+             <div class="row">
+                  <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 宏立城物业收费率 ( 实收/应收 )
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="hushu-fee" data-echart="fee" data-title="全部" style="height:600px;"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                
+            </div>
+           
+        <!-- /#page-wrapper -->
+       
+
+    </div>
+    <!-- /#wrapper -->
+
+    
+  
+
+
+
+
+	       		
+	       		
+	       		
+	        </div>
+        <!-- /#page-wrapper -->
+       
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="sbadmin/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="sbadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="sbadmin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="sbadmin/bower_components/raphael/raphael-min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="sbadmin/dist/js/sb-admin-2.js"></script>
+    
+    <script src="echarts/echarts.min.js"></script>
+    <script src="common.js" ></script>
+    
+    <script>
+    	$('[data-echart]').each(function() {
+			drawChart(this, $(this).attr('data-echart'), $(this).attr('data-title'));
+		});
+    </script>
+
+</body>
+
+</html>
