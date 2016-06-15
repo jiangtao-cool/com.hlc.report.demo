@@ -26,6 +26,17 @@ function drawChart(dom, filename, title) {
 				window.location = params.data.link;
 			}
 		});
+		
+		if (filename == 'fee'){
+			myChart.on('click', function(params){
+				location = "收费率-钻取-费用组成.html"
+			})
+			
+			myChart.on('legendselectchanged', function (params) {
+			    location = "收费率-钻取-收费台帐.html"
+			});
+		}
+		
 	});
 }
 
